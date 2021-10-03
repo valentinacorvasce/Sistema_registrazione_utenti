@@ -7,6 +7,19 @@ class MvcTemplate{
     }
 
     public function linksController(){
-        
+
+        if(isset($_GET['action'])){
+
+            $links = $_GET['action'];
+
+        }else{
+
+            $links = 'index';
+        }
+
+        $response = Pages::showPages($links);
+
+        include $response;
+
     }
 }

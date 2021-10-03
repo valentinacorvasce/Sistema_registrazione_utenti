@@ -15,6 +15,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php
+
+        include 'modules/navbar.php';
+
+    ?>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mx-auto">
+
+                <?php
+
+                $mvc = new MvcTemplate();
+                $mvc -> linksController();
+                ?>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 <!-- Bootstrap JS -->
