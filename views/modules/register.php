@@ -1,6 +1,6 @@
 <h2>Registrazione</h2>
 
-<form>
+<form method="POST">
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Name</label>
         <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" name="nome" required>
@@ -21,3 +21,10 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+
+<?php 
+
+    $register = new MvcTemplate();
+    $register -> registerUserController();
+
+?>

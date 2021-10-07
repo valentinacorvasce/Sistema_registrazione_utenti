@@ -5,11 +5,12 @@ error_reporting(E_ALL);
 
 class Connection{
 
-    public function connect(){
+    public static function connect(){
 
         $link = new PDO('mysql:host=localhost:3307;dbname=pdo_test', 'root', 'root');
-
-        var_dump($link);
+        
+        return $link; 
+        // var_dump($link);
     }
 
     

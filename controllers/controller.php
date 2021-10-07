@@ -22,4 +22,21 @@ class MvcTemplate{
         include $response;
 
     }
+
+
+    // CREATE = Inserimento nuovi dati;
+    public function registerUserController(){
+
+        $dataController = array(
+            'nome' => $_POST['nome'],
+            'mail' => $_POST['mail'],
+            'password' => $_POST['password']
+        );
+
+        $responseDb = Data::registerUserModel($dataController, 'users');
+            echo $responseDb;
+        
+        
+        
+    }
 }
