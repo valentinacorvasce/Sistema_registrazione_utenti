@@ -27,6 +27,7 @@ class MvcTemplate{
     // CREATE = Inserimento nuovi dati;
     public function registerUserController(){
 
+        if(isset($_POST['submit'])){
         $dataController = array(
             'nome' => $_POST['nome'],
             'mail' => $_POST['mail'],
@@ -37,6 +38,6 @@ class MvcTemplate{
             echo $responseDb;
         
         
-        
+    }
     }
 }

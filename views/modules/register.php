@@ -18,7 +18,7 @@
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <div class="d-grid">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
 
