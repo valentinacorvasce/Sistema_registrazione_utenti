@@ -22,7 +22,7 @@ class Pages{
 
         }elseif($links == 'error'){
 
-            $moduleNav = 'views/modules/register.php';
+            $moduleNav = 'views/modules/login.php';
 
         }else{
             
