@@ -16,6 +16,10 @@ class Pages{
 
             $moduleNav = 'views/modules/register.php';
 
+        }elseif($links == 'ok'){
+
+            $moduleNav = 'views/modules/register.php';
+
         }else{
             
             $moduleNav = 'views/modules/register.php';

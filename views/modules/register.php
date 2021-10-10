@@ -27,4 +27,10 @@
     $register = new MvcTemplate();
     $register -> registerUserController();
 
+    if(isset($_GET['action'])){
+        if($_GET['action'] == 'ok'){
+              echo '<div class="alert alert-success">Utente inserito correttamente!</div>';
+        }
+    }
+
 ?>

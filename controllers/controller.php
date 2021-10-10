@@ -35,9 +35,14 @@ class MvcTemplate{
         );
 
         $responseDb = Data::registerUserModel($dataController, 'users');
-            echo $responseDb;
+            // echo $responseDb;
         
-        
+        if($responseDb == 'success'){
+            header('location:index.php?action=ok');
+
+        }else{
+            header('location:index.php');
+        }
     }
     }
 }
