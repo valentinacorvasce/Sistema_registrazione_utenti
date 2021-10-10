@@ -17,5 +17,16 @@ class Data extends Connection{
             return '<div class="alert alert-danger">Ops, si è verificato un errore.</div>';
         }
     }
+
+    // Login Utente;
+    public static function loginUserModel($dataModel, $table){
+        $stmt = Connection::connect() -> prepare("SELECT email, pass FROM $table WHERE email = :em");
+        $stmt -> bindParam(':em', $dataModel['mail'], PDO::PARAM_STR);
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+               $stmt -> close();
+
+    }
     }
     

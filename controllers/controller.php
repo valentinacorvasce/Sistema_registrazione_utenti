@@ -45,4 +45,27 @@ class MvcTemplate{
         }
     }
     }
+
+
+    // Gestione della funzione di Login;
+    public function loginUserController(){
+
+        if(isset($_POST['login'])){
+            $dataController = array(
+                'mail' => $_POST['mail'],
+                'password' => $_POST['password']
+            );
+
+            $responseDb = Data::loginUserModel($dataController, 'users');
+
+            if($responseDb['email'] == $_POST['mail'] && $responseDb['pass'] == $_POST['password']){
+
+                header('location:index.php?action=users');
+
+            }else{
+                header('location:index.php?action=error');
+            }
+
+        }
+    }
 }
