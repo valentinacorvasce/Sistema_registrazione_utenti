@@ -28,5 +28,17 @@ class Data extends Connection{
                $stmt -> close();
 
     }
+
+
+    // READ = leggere i dati;
+    public static function showUserModel($table){
+        $stmt = Connection::connect() -> prepare("SELECT * FROM $table");
+        $stmt -> execute();
+
+        return $stmt -> fetchAll();
+               $stmt -> close();
     }
+
+
+}
     

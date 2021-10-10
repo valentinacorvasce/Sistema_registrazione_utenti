@@ -68,4 +68,23 @@ class MvcTemplate{
 
         }
     }
+
+
+    // READ = leggere i dati;
+    public function showUserController(){
+
+        $responseDb = Data::showUserModel('users');
+
+        foreach($responseDb as $row => $data){
+            echo '
+            <tr>
+                <td>' . $data['name'] .'</td>
+                <td>'. $data['email'] . '</td>
+                <td>' . $data['pass'] . '</td>
+                <td><button class="btn btn-success">Modifica</button></td>
+                <td><button class="btn btn-danger">Cancella</button></td>
+            </tr>
+            ';
+        }
+    }
 }
