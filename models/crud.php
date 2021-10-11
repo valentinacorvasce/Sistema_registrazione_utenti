@@ -16,6 +16,8 @@ class Data extends Connection{
         }else{
             return '<div class="alert alert-danger">Ops, si è verificato un errore.</div>';
         }
+
+        $stmt -> close();
     }
 
     // Login Utente;

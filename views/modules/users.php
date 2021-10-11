@@ -4,6 +4,8 @@ session_start();
 
 if(!$_SESSION['validation']){
     header('location:index.php?action=login');
+
+    exit();
 }
 
 ?>
