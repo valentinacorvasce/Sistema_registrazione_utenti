@@ -87,7 +87,7 @@ class MvcTemplate{
                 <td>' . $data['name'] .'</td>
                 <td>'. $data['email'] . '</td>
                 <td>' . $data['pass'] . '</td>
-                <td><button class="btn btn-success">Modifica</button></td>
+                <td><a href="index.php?action=update&id='.$data["id"].'"><button class="btn btn-success">Modifica</button></a></td>
                 <td><button class="btn btn-danger">Cancella</button></td>
             </tr>
             ';
