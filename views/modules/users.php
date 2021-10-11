@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!$_SESSION['validation']){
+    header('location:index.php?action=login');
+}
+
+?>
+
 <h2>Utenti</h2>
 
 <table class="table table-striped">

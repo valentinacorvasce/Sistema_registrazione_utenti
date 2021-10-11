@@ -60,6 +60,12 @@ class MvcTemplate{
 
             if($responseDb['email'] == $_POST['mail'] && $responseDb['pass'] == $_POST['password']){
 
+                // Inizializzo una sessione;
+                session_start();
+
+                // Creo una variabile di sessione;
+                $_SESSION['validation'] = true;
+
                 header('location:index.php?action=users');
 
             }else{
