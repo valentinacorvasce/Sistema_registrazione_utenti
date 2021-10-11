@@ -41,6 +41,37 @@ class Data extends Connection{
                $stmt -> close();
     }
 
+    // Modifica dei dati;
+    public static function updateUserModel($dataModel, $table){
+        $stmt = Connection::connect() -> prepare("SELECT * FROM $table WHERE id = :id");
+        $stmt -> bindParam(':id', $dataModel, PDO::PARAM_INT);
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+               $stmt -> close();
+
+    }
+
+
+    // Aggiornamento dei dati;
+    public static function updateUserModel_2($dataModel, $table){
+
+        $stmt = Connection::connect() -> prepare("UPDATE $table SET name = :n, email = :em, pass = :ps WHERE id = :id");
+        $stmt -> bindParam(':n', $dataModel['nome'], PDO::PARAM_STR);
+        $stmt -> bindParam(':em', $dataModel['mail'], PDO::PARAM_STR);
+        $stmt -> bindParam(':ps', $dataModel['password'], PDO::PARAM_STR);
+        $stmt -> bindParam(':id', $dataModel['id'], PDO::PARAM_INT);
+
+        if($stmt -> execute()){
+            return 'success';
+        }else{
+            return '<div class="alert alert-danger">Ops, si è verificato un errore.</div>';
+        }
+
+        $stmt -> close();
+
+    }
+
 
 }
     

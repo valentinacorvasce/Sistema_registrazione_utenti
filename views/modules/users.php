@@ -12,6 +12,20 @@ if(!$_SESSION['validation']){
 
 <h2>Utenti</h2>
 
+<?php
+
+if(isset($_GET['action'])){
+
+    if($_GET['action'] == 'edit'){
+
+        echo '<div class="alert alert-success">L\'utente è stato correttamente aggiornato!</div>';
+
+    }
+
+}
+
+?>
+
 <table class="table table-striped">
     <thead>
     <tr>
@@ -36,3 +50,5 @@ if(!$_SESSION['validation']){
 
     </tbody>
 </table>
+
+

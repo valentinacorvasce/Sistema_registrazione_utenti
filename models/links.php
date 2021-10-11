@@ -24,6 +24,10 @@ class Pages{
 
             $moduleNav = 'views/modules/login.php';
 
+        }elseif($links == 'edit'){
+
+            $moduleNav = 'views/modules/users.php';
+
         }else{
             
             $moduleNav = 'views/modules/register.php';

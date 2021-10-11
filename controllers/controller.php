@@ -93,4 +93,67 @@ class MvcTemplate{
             ';
         }
     }
+
+    // UPDATE = modifica e aggiornamento degli utenti e del database;
+    public function updateUserController(){
+
+        $dataController = $_GET['id'];
+        $responseDb = Data::updateUserModel($dataController, 'users');
+
+        $id = $responseDb['id'];
+        $name = $responseDb['name'];
+        $email = $responseDb['email'];
+        $pass = $responseDb['pass'];
+
+        echo '
+
+        <input value="'.$id.'" name="idUtente" hidden>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" name="nome" value="'.$name.'" required>
+                </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="La tua Mail" name="mail" value="'.$email.'" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="La tua Password" name="password" value="'.$pass.'" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        
+        
+        ';
+    }
+
+
+    // Aggiornamento dei dati nel database;
+    public function updateUserController_2(){
+
+        if(isset($_POST['nome'])){
+            $dataController = array(
+                'id' => $_POST['idUtente'],
+                'nome' => $_POST['nome'],
+                'mail' => $_POST['mail'],
+                'password' => $_POST['password']
+            );
+
+            $responseDb = Data::updateUserModel_2($dataController, 'users');
+
+            if($responseDb == 'success'){
+
+                header('location:index.php?action=edit');
+
+            }else{
+                echo 'error';
+            }
+
+        }
+    }
 }
