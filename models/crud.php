@@ -73,5 +73,20 @@ class Data extends Connection{
     }
 
 
+    // Cancellare i dati dal database;
+    public static function deleteUserModel($dataModel, $table){
+        $stmt = Connection::connect() -> prepare("DELETE FROM $table WHERE id = :id");
+        $stmt -> bindParam(':id', $dataModel, PDO::PARAM_INT);
+
+        if($stmt -> execute()){
+
+            return 'success';
+        }else{
+            return 'error';
+        };
+
+               $stmt -> close();
+
+    }
 }
     

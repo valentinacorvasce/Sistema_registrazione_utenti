@@ -1,5 +1,18 @@
 <h2>Registrazione</h2>
 
+<?php 
+
+    $register = new MvcTemplate();
+    $register -> registerUserController();
+
+    if(isset($_GET['action'])){
+        if($_GET['action'] == 'ok'){
+              echo '<div class="alert alert-success">Utente inserito correttamente!</div>';
+        }
+    }
+
+?>
+
 <form method="POST">
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Name</label>
@@ -22,15 +35,3 @@
   </div>
 </form>
 
-<?php 
-
-    $register = new MvcTemplate();
-    $register -> registerUserController();
-
-    if(isset($_GET['action'])){
-        if($_GET['action'] == 'ok'){
-              echo '<div class="alert alert-success">Utente inserito correttamente!</div>';
-        }
-    }
-
-?>
