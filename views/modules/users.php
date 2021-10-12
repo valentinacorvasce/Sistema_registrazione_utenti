@@ -26,6 +26,8 @@ if(isset($_GET['action'])){
 
 ?>
 
+
+
 <table class="table table-striped">
     <thead>
     <tr>
@@ -44,6 +46,7 @@ if(isset($_GET['action'])){
 
         $showUsers = new MvcTemplate();
         $showUsers -> showUserController();
+        $showUsers -> deleteUserController();
 
     ?>
 

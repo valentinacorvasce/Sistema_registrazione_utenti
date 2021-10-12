@@ -1,5 +1,7 @@
 <?php
 
+ob_start();
+
 class MvcTemplate{
 
     public function showTemplate(){
@@ -88,7 +90,7 @@ class MvcTemplate{
                 <td>'. $data['email'] . '</td>
                 <td>' . $data['pass'] . '</td>
                 <td><a href="index.php?action=update&id='.$data["id"].'"><button class="btn btn-success">Modifica</button></a></td>
-                <td><button class="btn btn-danger">Cancella</button></td>
+                <td><a href="index.php?action=users&delete='.$data["id"].'"><button class="btn btn-danger">Cancella</button></a></td>
             </tr>
             ';
         }
@@ -152,6 +154,25 @@ class MvcTemplate{
 
             }else{
                 echo 'error';
+            }
+
+        }
+    }
+
+
+    // DELETE = Cancellare gli utenti;
+    public function deleteUserController(){
+
+        if(isset($_GET['delete'])){
+
+            $dataController = $_GET['delete'];
+
+            $responseDb = Data::deleteUserModel($dataController, 'users');
+
+            if($responseDb == 'success'){
+
+                header('location:index.php?action=users');
+
             }
 
         }
