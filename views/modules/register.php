@@ -13,10 +13,10 @@
 
 ?>
 
-<form method="POST">
+<form method="POST" onsubmit="return validRegistration()">
     <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Name</label>
-        <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" name="nome" required>
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" id="name" name="nome" required>
     </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
