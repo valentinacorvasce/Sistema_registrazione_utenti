@@ -19,8 +19,8 @@
         <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" id="name" name="nome" required>
     </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="La tua Mail" name="mail" required>
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="La tua Mail" name="mail" required>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
