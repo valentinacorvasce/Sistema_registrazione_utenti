@@ -27,8 +27,8 @@
     <input type="password" class="form-control" id="pass" placeholder="La tua Password" name="password" required>
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="checkbox" class="form-check-input" id="check">
+    <label class="form-check-label" for="check">Accetto l'<a href="#">informativa per la Privacy</a></label>
   </div>
   <div class="d-grid">
     <button type="submit" name="submit" class="btn btn-primary">Submit</button>

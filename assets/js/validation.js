@@ -5,6 +5,7 @@ const validRegistration = () => {
     // alert(name);
     let mail = document.querySelector('#email').value;
     let pass = document.querySelector('#pass').value;
+    let policy = document.querySelector('#check').checked;
 
     // Validazione del Nome;
     if (name != '') {
@@ -48,6 +49,19 @@ const validRegistration = () => {
             return false;
         }
     }
+
+    // Validazione della Policy;
+    if (!policy) {
+        document.querySelector('label[for="check"]').innerHTML += '<br><div class="alert alert-warning">Accetta l\'informativa!</div>';
+
+        // Tecnica per evitare la cancellazione dei dati al momento del click del bottone;
+        document.querySelector('#name').value = name;
+        document.querySelector('#email').value = mail;
+        document.querySelector('#pass').value = pass;
+
+        return false;
+    }
+
 
 
 
