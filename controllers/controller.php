@@ -30,10 +30,14 @@ class MvcTemplate{
     public function registerUserController(){
 
         if(isset($_POST['submit'])){
+            // Cifratura della password mediante funzione "crypt";
+            $securePass = crypt($_POST['password'], '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
+
+
         $dataController = array(
             'nome' => $_POST['nome'],
             'mail' => $_POST['mail'],
-            'password' => $_POST['password']
+            'password' => $securePass
         );
 
         $responseDb = Data::registerUserModel($dataController, 'users');
@@ -53,14 +57,17 @@ class MvcTemplate{
     public function loginUserController(){
 
         if(isset($_POST['login'])){
+             // Cifratura della password mediante funzione "crypt";
+             $securePass = crypt($_POST['password'], '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
+
             $dataController = array(
                 'mail' => $_POST['mail'],
-                'password' => $_POST['password']
+                'password' => $securePass
             );
 
             $responseDb = Data::loginUserModel($dataController, 'users');
 
-            if($responseDb['email'] == $_POST['mail'] && $responseDb['pass'] == $_POST['password']){
+            if($responseDb['email'] == $_POST['mail'] && $responseDb['pass'] == $securePass){
 
                 // Inizializzo una sessione;
                 session_start();
@@ -139,11 +146,14 @@ class MvcTemplate{
     public function updateUserController_2(){
 
         if(isset($_POST['nome'])){
+             // Cifratura della password mediante funzione "crypt";
+             $securePass = crypt($_POST['password'], '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
+
             $dataController = array(
                 'id' => $_POST['idUtente'],
                 'nome' => $_POST['nome'],
                 'mail' => $_POST['mail'],
-                'password' => $_POST['password']
+                'password' => $securePass
             );
 
             $responseDb = Data::updateUserModel_2($dataController, 'users');
