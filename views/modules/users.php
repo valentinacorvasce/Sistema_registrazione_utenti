@@ -27,31 +27,31 @@ if(isset($_GET['action'])){
 ?>
 
 
+<div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Gestisci</th>
+                <th></th>
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">Nome</th>
-        <th scope="col">Email</th>
-        <th scope="col">Password</th>
-        <th scope="col">Gestisci</th>
-        <th></th>
+            </tr>
+            </thead>
 
-    </tr>
-    </thead>
+            <tbody>
 
-    <tbody>
+            <?php
 
-    <?php
+                $showUsers = new MvcTemplate();
+                $showUsers -> showUserController();
+                $showUsers -> deleteUserController();
 
-        $showUsers = new MvcTemplate();
-        $showUsers -> showUserController();
-        $showUsers -> deleteUserController();
-
-    ?>
+            ?>
 
 
-    </tbody>
-</table>
-
+            </tbody>
+        </table>
+</div>
 
