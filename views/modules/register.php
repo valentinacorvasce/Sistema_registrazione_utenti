@@ -15,11 +15,11 @@
 
 <form method="POST" onsubmit="return validRegistration()">
     <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
+        <label for="name" class="form-label">Nome</label>
         <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" id="name" name="nome" required>
     </div>
   <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
+    <label for="email" class="form-label">Email</label>
     <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="La tua Mail" name="mail" required>
   </div>
   <div class="mb-3">
@@ -31,7 +31,7 @@
     <label class="form-check-label" for="check">Accetto l'<a href="#">informativa per la Privacy</a></label>
   </div>
   <div class="d-grid">
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="submit" class="btn btn-primary">Iscriviti!</button>
   </div>
 </form>
 
