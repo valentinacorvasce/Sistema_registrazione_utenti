@@ -44,7 +44,7 @@ class MvcTemplate{
             // echo $responseDb;
         
         if($responseDb == 'success'){
-            header('location:index.php?action=ok');
+            header('location:ok');
 
         }else{
             header('location:index.php');
@@ -86,16 +86,16 @@ class MvcTemplate{
                 // Creo una variabile di sessione;
                 $_SESSION['validation'] = true;
 
-                header('location:index.php?action=users');
+                header('location:users');
 
             }
         }elseif(empty($_POST['g-recaptcha-response'])){
-            header('location:index.php?action=captchafail');
+            header('location:captchafail');
 
         }
         
         else{
-                header('location:index.php?action=error');
+                header('location:error');
             }
 
         }
@@ -173,7 +173,7 @@ class MvcTemplate{
 
             if($responseDb == 'success'){
 
-                header('location:index.php?action=edit');
+                header('location:edit');
 
             }else{
                 echo 'error';
@@ -194,7 +194,7 @@ class MvcTemplate{
 
             if($responseDb == 'success'){
 
-                header('location:index.php?action=users');
+                header('location:users');
 
             }
 

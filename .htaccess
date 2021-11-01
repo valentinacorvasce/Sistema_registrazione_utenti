@@ -1,0 +1,11 @@
+#Impedire l'indicizzazione delle cartelle
+
+Options All -Indexes
+
+#Rendiamo gli URL amichevoli
+
+#Attiviamo il modulo mod_rewrite
+
+RewriteEngine on
+
+RewriteRule ^(\w+)$ index.php?action=$1

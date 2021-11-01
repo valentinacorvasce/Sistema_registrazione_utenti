@@ -7,9 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="index.php">Registrati</a>
-        <a class="nav-link" href="index.php?action=login">Login</a>
-        <a class="nav-link" href="index.php?action=users">Utenti</a>
-        <a class="nav-link" href="index.php?action=logout" tabindex="-1" aria-disabled="false">Logout</a>
+        <a class="nav-link" href="login">Login</a>
+        <a class="nav-link" href="users">Utenti</a>
+        <a class="nav-link" href="logout" tabindex="-1" aria-disabled="false">Logout</a>
       </div>
     </div>
   </div>
