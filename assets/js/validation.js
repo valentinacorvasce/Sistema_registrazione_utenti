@@ -1,3 +1,26 @@
+/* Ajax */
+$('#name').change(() => {
+    let generalUser = $('#name').val();
+    console.log(generalUser);
+
+    let data = new FormData();
+    data.append('userValidation', generalUser);
+
+    $.ajax({
+        url: 'views/modules/ajax.php',
+        method: 'POST',
+        data: data,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: (response) => {
+
+        }
+
+    });
+});
+
+
 /* Form Validation; */
 
 const validRegistration = () => {
