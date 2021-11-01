@@ -67,6 +67,17 @@ class MvcTemplate{
 
             $responseDb = Data::loginUserModel($dataController, 'users');
 
+            // Controllo di ReCaptcha;
+            $secret = '6LdJAwodAAAAAOlQKWxeJ2LCydsRpl1M9SrsXqOZ';
+            $response = $_POST['g-recaptcha-response'];
+            $remoteIP = $_SERVER['REMOTE_ADDR'];
+
+            $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteIP");
+                $result = json_decode($verify);
+
+        if($result -> success){
+
+
             if($responseDb['email'] == $_POST['mail'] && $responseDb['pass'] == $securePass){
 
                 // Inizializzo una sessione;
@@ -77,7 +88,13 @@ class MvcTemplate{
 
                 header('location:index.php?action=users');
 
-            }else{
+            }
+        }elseif(empty($_POST['g-recaptcha-response'])){
+            header('location:index.php?action=captchafail');
+
+        }
+        
+        else{
                 header('location:index.php?action=error');
             }
 
