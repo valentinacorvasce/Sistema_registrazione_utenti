@@ -1,3 +1,7 @@
+/* Disabilita il submit quando Ajax controlla nome e email; */
+let userExist = false;
+let mailExist = false;
+
 /* Ajax for name */
 $('#name').change(() => {
     let generalUser = $('#name').val();
@@ -18,9 +22,11 @@ $('#name').change(() => {
 
             if (response == 0) {
                 $('label[for="name"] span').html('<div class="alert alert-info">Questo nome utente è già presente nel nostro database!</div>');
+                userExist = true;
 
             } else {
                 $('label[for="name"] span').html('');
+                userExist = false;
             }
 
         }
@@ -48,9 +54,11 @@ $('#email').change(() => {
 
             if (response == 0) {
                 $('label[for="email"] span').html('<div class="alert alert-info">Questo indirizzo mail è già presente nel nostro database!</div>');
+                mailExist = true;
 
             } else {
                 $('label[for="email"] span').html('');
+                mailExist = false;
             }
 
         }
@@ -86,6 +94,14 @@ const validRegistration = () => {
             return false;
 
         }
+        // Controllo del dato unico;
+        if (userExist) {
+            document.querySelector('label[for="name"] span').innerHTML = '<div class="alert alert-warning">Nome utente già presente!</div>';
+
+            return false;
+
+        }
+
 
     }
 
@@ -97,6 +113,14 @@ const validRegistration = () => {
             document.querySelector('label[for="email"]').innerHTML += '<br><div class="alert alert-warning">Ops, l\'indirizzo mail inserito non è valido</div>';
 
             return false;
+        }
+
+        // Controllo del dato unico;
+        if (mailExist) {
+            document.querySelector('label[for="email"] span').innerHTML = '<div class="alert alert-warning">Email già presente!</div>';
+
+            return false;
+
         }
     }
 
