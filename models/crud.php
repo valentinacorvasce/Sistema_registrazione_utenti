@@ -88,5 +88,17 @@ class Data extends Connection{
                $stmt -> close();
 
     }
+
+    // Ajax: controllo input sul nome;
+    public static function userValidationModel($dataModel, $table){
+        $stmt = Connection::connect() -> prepare("SELECT name FROM $table WHERE name = :name");
+        $stmt -> bindParam(':name', $dataModel, PDO::PARAM_STR);
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+               $stmt -> close();
+
+    }
+
 }
     

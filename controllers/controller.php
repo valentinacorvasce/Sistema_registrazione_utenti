@@ -200,4 +200,20 @@ class MvcTemplate{
 
         }
     }
+
+
+    // Ajax user validation;
+    static public function userValidationController($validUser){
+
+        $dataController = $validUser;
+        $responseDb = Data::userValidationModel($dataController, 'users');
+
+        if(!empty($responseDb['name'])){
+            echo 0;
+
+        }else{
+            echo 1;
+        }
+
+    }
 }

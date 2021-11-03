@@ -15,7 +15,7 @@
 
 <form method="POST" onsubmit="return validRegistration()">
     <div class="mb-3">
-        <label for="name" class="form-label">Nome</label>
+        <label for="name" class="form-label">Nome<span></span></label>
         <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" id="name" name="nome" required>
     </div>
   <div class="mb-3">

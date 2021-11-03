@@ -1,7 +1,7 @@
 /* Ajax */
 $('#name').change(() => {
     let generalUser = $('#name').val();
-    console.log(generalUser);
+    // console.log(generalUser);
 
     let data = new FormData();
     data.append('userValidation', generalUser);
@@ -14,6 +14,14 @@ $('#name').change(() => {
         processData: false,
         cache: false,
         success: (response) => {
+            console.log('php dice: ' + response);
+
+            if (response == 0) {
+                $('label[for="name"] span').html('<div class="alert alert-info">Questo nome utente è già presente nel nostro database!</div>');
+
+            } else {
+                $('label[for="name"] span').html('');
+            }
 
         }
 
