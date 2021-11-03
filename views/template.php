@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
+
     <!-- Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
