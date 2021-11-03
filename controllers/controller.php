@@ -216,4 +216,19 @@ class MvcTemplate{
         }
 
     }
+
+        // Ajax mail validation;
+        static public function mailValidationController($validMail){
+
+            $dataController = $validMail;
+            $responseDb = Data::mailValidationModel($dataController, 'users');
+    
+            if(!empty($responseDb['email'])){
+                echo 0;
+    
+            }else{
+                echo 1;
+            }
+    
+        }
 }

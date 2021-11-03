@@ -1,4 +1,4 @@
-/* Ajax */
+/* Ajax for name */
 $('#name').change(() => {
     let generalUser = $('#name').val();
     // console.log(generalUser);
@@ -21,6 +21,36 @@ $('#name').change(() => {
 
             } else {
                 $('label[for="name"] span').html('');
+            }
+
+        }
+
+    });
+});
+
+/* Ajax for email */
+$('#email').change(() => {
+    let mailControl = $('#email').val();
+    // console.log(mailControl);
+
+    let data = new FormData();
+    data.append('mailValidation', mailControl);
+
+    $.ajax({
+        url: 'views/modules/ajax.php',
+        method: 'POST',
+        data: data,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: (response) => {
+            console.log('php dice: ' + response);
+
+            if (response == 0) {
+                $('label[for="email"] span').html('<div class="alert alert-info">Questo indirizzo mail è già presente nel nostro database!</div>');
+
+            } else {
+                $('label[for="email"] span').html('');
             }
 
         }

@@ -19,7 +19,7 @@
         <input type="text" class="form-control" placeholder="Il tuo Nome" aria-label="First name" id="name" name="nome" required>
     </div>
   <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
+    <label for="email" class="form-label">Email<span></span></label>
     <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="La tua Mail" name="mail" required>
   </div>
   <div class="mb-3">

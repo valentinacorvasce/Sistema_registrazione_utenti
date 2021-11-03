@@ -100,5 +100,16 @@ class Data extends Connection{
 
     }
 
+    // Ajax: controllo input sulla mail;
+    public static function mailValidationModel($dataModel, $table){
+        $stmt = Connection::connect() -> prepare("SELECT email FROM $table WHERE email = :email");
+        $stmt -> bindParam(':email', $dataModel, PDO::PARAM_STR);
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+               $stmt -> close();
+
+    }
+
 }
     
