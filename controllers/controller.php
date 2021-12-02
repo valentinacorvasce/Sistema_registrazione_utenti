@@ -49,7 +49,7 @@ class MvcTemplate{
         }else{
             header('location:index.php');
         }
-    }
+      }
     }
 
 
@@ -88,17 +88,15 @@ class MvcTemplate{
 
                 header('location:users');
 
+            }else{
+                header('location:error');
             }
         }elseif(empty($_POST['g-recaptcha-response'])){
             header('location:captchafail');
 
         }
-        
-        else{
-                header('location:error');
-            }
 
-        }
+      }
     }
 
 
