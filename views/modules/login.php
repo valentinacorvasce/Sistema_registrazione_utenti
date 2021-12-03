@@ -7,7 +7,7 @@
 
   if(isset($_GET['action'])){
     if($_GET['action'] == 'error'){
-          echo '<div class="alert alert-warning">Attenzione, il nome utente e la mail inseriti non sono presenti nel nostro database!</div>';
+          echo '<div class="alert alert-warning">Attenzione, la mail o la password inserite non sono presenti nel nostro database!</div>';
     }
 
     if($_GET['action'] == 'captchafail'){
