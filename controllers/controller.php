@@ -31,12 +31,12 @@ class MvcTemplate{
 
         if(isset($_POST['submit'])){
             // Cifratura della password mediante funzione "crypt";
-            $securePass = crypt($_POST['password'], '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
+            $securePass = crypt(htmlentities($_POST['password']), '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
 
 
         $dataController = array(
-            'nome' => $_POST['nome'],
-            'mail' => $_POST['mail'],
+            'nome' => htmlentities($_POST['nome']),
+            'mail' => htmlentities($_POST['mail']),
             'password' => $securePass
         );
 
@@ -58,10 +58,10 @@ class MvcTemplate{
 
         if(isset($_POST['login'])){
              // Cifratura della password mediante funzione "crypt";
-             $securePass = crypt($_POST['password'], '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
+             $securePass = crypt(htmlentities($_POST['password']), '$5$zyPltHmiO9ZqMg7JHRWktNhB_GZ0jiQWvDe0c4N7$');
 
             $dataController = array(
-                'mail' => $_POST['mail'],
+                'mail' => htmlentities($_POST['mail']),
                 'password' => $securePass
             );
 
@@ -90,12 +90,12 @@ class MvcTemplate{
 
             }else{
                 header('location:error');
-            }
+            }          
         }elseif(empty($_POST['g-recaptcha-response'])){
             header('location:captchafail');
 
         }
-
+        
       }
     }
 
