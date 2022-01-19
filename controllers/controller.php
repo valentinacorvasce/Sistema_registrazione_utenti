@@ -121,7 +121,7 @@ class MvcTemplate{
     // UPDATE = modifica e aggiornamento degli utenti e del database;
     public function updateUserController(){
 
-        $dataController = $_GET['id'];
+        $dataController = (int) $_GET['id'];
         $responseDb = Data::updateUserModel($dataController, 'users');
 
         $id = $responseDb['id'];
